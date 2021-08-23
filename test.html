@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+}
+
+/* The grid: Four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 25%;
+  padding: 10px;
+}
+
+/* Style the images inside the grid */
+.column img {
+  opacity: 0.8; 
+  cursor: pointer; 
+}
+
+.column img:hover {
+  opacity: 1;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* The expanding image container */
+.container {
+  position: relative;
+  display: none;
+}
+
+/* Expanding image text */
+#imgtext {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: white;
+  font-size: 20px;
+}
+
+/* Closable button inside the expanded image */
+.closebtn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+}
+/* The Modal (background) */
+.ebcf_modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.ebcf_modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+}
+
+/* The Close Button */
+.ebcf_close {
+    color: #aaaaaa;
+    position: absolute;
+    float: right;
+    z-index: 1;
+    
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.ebcf_close:hover,
+.ebcf_close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<div style="text-align:center">
+  <h2>Tabbed Image Gallery</h2>
+  <p>Click on the images below:</p>
+</div>
+
+<!-- The four columns -->
+
+
+<!-- modal starts -->
+
+<div class="ebcf_modal" id="tahamodal">
+    <div class="ebcf_modal-content">
+        <span class="ebcf_close" onclick="closeModal('tahamodal')">&times;</span>
+        <div class="container">
+            <!-- <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span> -->
+            <img id="taha_img" style="width:100%">
+            <div id="taha_text"></div>
+          </div>
+        <div class="row">
+          <div class="column">
+            <img src="images_final/original.png" alt="taha" style="width:100%" onclick="myFunction(this,'taha');">
+          </div>
+          <div class="column">
+            <img src="images_final/original.png" alt="Snow" style="width:100%" onclick="myFunction(this,'taha');">
+          </div>
+          <div class="column">
+            <img src="images_final/original.png" alt="Mountains" style="width:100%" onclick="myFunction(this,'taha');">
+          </div>
+          <div class="column">
+            <img src="images_final/original.png" alt="Lights" style="width:100%" onclick="myFunction(this,'taha');">
+          </div>
+          <div class="column">
+            <img src="images_final/original.png" alt="Lights" style="width:100%" onclick="myFunction(this,'taha');">
+          </div>
+          <div class="column">
+            <img src="images_final/original.png" alt="Lights" style="width:100%" onclick="myFunction(this,'taha');">
+          </div>
+        </div>
+      </div>
+</div>
+<img src="/images_final/logo.png" id="taha" onclick="modalView(this);">
+<!-- modal ends -->
+
+<!-- modal starts -->
+
+<div class="ebcf_modal" id="abbasmodal">
+    <div class="ebcf_modal-content">
+        <span class="ebcf_close" onclick="closeModal('abbasmodal')">&times;</span>
+        <div class="container">
+            <!-- <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span> -->
+            <img id="abbas_img" style="width:100%">
+            <div id="abbas_text"></div>
+          </div>
+        <div class="row">
+          <div class="column">
+            <img src="images_final/original.png" alt="abbas" style="width:100%" onclick="myFunction(this,'abbas');">
+          </div>
+          <div class="column">
+            <img src="images_final/original.png" alt="Snow" style="width:100%" onclick="myFunction(this,'abbas');">
+          </div>
+          <div class="column">
+            <img src="images_final/original.png" alt="Mountains" style="width:100%" onclick="myFunction(this,'abbas');">
+          </div>
+          <div class="column">
+            <img src="images_final/original.png" alt="Lights" style="width:100%" onclick="myFunction(this,'abbas');">
+          </div>
+          <div class="column">
+            <img src="images_final/original.png" alt="Lights" style="width:100%" onclick="myFunction(this,'abbas');">
+          </div>
+          <div class="column">
+            <img src="images_final/original.png" alt="Lights" style="width:100%" onclick="myFunction(this,'abbas');">
+          </div>
+        </div>
+      </div>
+</div>
+<img src="/images_final/logo.png" id="abbas" onclick="modalView(this);">
+<!-- modal ends -->
+
+<!-- modal starts -->
+
+<div class="ebcf_modal" id="mustafamodal">
+    <div class="ebcf_modal-content">
+        <span class="ebcf_close" onclick="closeModal('mustafamodal')">&times;</span>
+        <div class="container">
+            <!-- <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span> -->
+            <img id="mustafa_img" style="width:100%">
+            <div id="mustafa_text"></div>
+          </div>
+        <div class="row">
+          <div class="column">
+            <img src="images_final/original.png" alt="mustafa" style="width:100%" onclick="myFunction(this,'mustafa');">
+          </div>
+          <div class="column">
+            <img src="images_final/original.png" alt="Snow" style="width:100%" onclick="myFunction(this,'mustafa');">
+          </div>
+          <div class="column">
+            <img src="images_final/original.png" alt="Mountains" style="width:100%" onclick="myFunction(this,'mustafa');">
+          </div>
+          <div class="column">
+            <img src="images_final/original.png" alt="Lights" style="width:100%" onclick="myFunction(this,'mustafa');">
+          </div>
+          <div class="column">
+            <img src="images_final/original.png" alt="Lights" style="width:100%" onclick="myFunction(this,'mustafa');">
+          </div>
+          <div class="column">
+            <img src="images_final/original.png" alt="Lights" style="width:100%" onclick="myFunction(this,'mustafa');">
+          </div>
+        </div>
+      </div>
+</div>
+<img src="/images_final/logo.png" id="mustafa" onclick="modalView(this);">
+<!-- modal ends -->
+
+<!-- modal starts -->
+
+<div class="ebcf_modal" id="burhanmodal">
+    <div class="ebcf_modal-content">
+        <span class="ebcf_close" onclick="closeModal('burhanmodal')">&times;</span>
+        <div class="container">
+            <!-- <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span> -->
+            <img id="burhan_img" style="width:100%">
+            <div id="burhan_text"></div>
+          </div>
+        <div class="row">
+          <div class="column">
+            <img src="images_final/original.png" alt="burhan" style="width:100%" onclick="myFunction(this,'burhan');">
+          </div>
+          <div class="column">
+            <img src="images_final/original.png" alt="Snow" style="width:100%" onclick="myFunction(this,'burhan');">
+          </div>
+          <div class="column">
+            <img src="images_final/original.png" alt="Mountains" style="width:100%" onclick="myFunction(this,'burhan');">
+          </div>
+          <div class="column">
+            <img src="images_final/original.png" alt="Lights" style="width:100%" onclick="myFunction(this,'burhan');">
+          </div>
+          <div class="column">
+            <img src="images_final/original.png" alt="Lights" style="width:100%" onclick="myFunction(this,'burhan');">
+          </div>
+          <div class="column">
+            <img src="images_final/original.png" alt="Lights" style="width:100%" onclick="myFunction(this,'burhan');">
+          </div>
+        </div>
+      </div>
+</div>
+<img src="/images_final/logo.png" id="burhan" onclick="modalView(this);">
+<!-- modal ends -->
+<script>
+function myFunction(imgs,modal_id) {
+  var expandImg = document.getElementById(modal_id+"_img");
+  var imgText = document.getElementById(modal_id+"_text");
+  expandImg.src = imgs.src;
+  imgText.innerHTML = imgs.alt;
+  expandImg.parentElement.style.display = "block";
+}
+function modalView(model){
+    console.log("abbas")
+    console.log(model.id)
+    cur_model = document.getElementById(model.id+"modal");
+    cur_model.style.display = "block";
+}
+function closeModal(model){
+    cur_model = document.getElementById(model)
+    cur_model.style.display = "none"
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == cur_model) {
+        cur_model.style.display = "none";
+    }
+}
+</script>
+
+</body>
+</html>
